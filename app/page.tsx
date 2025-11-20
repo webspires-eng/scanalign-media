@@ -11,7 +11,7 @@ export default function Home() {
       }}
     >
       <Image
-        src="/media/F.jpeg"
+        src="/Media/F.jpeg"
         alt="Company Logo"
         width={600} // proportional width
         height={168} // calculated height
