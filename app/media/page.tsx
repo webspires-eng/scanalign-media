@@ -26,7 +26,6 @@ export default function MediaPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
     fetch('/api/media')
       .then((res) => res.json())
       .then((data) => {
@@ -161,7 +160,7 @@ export default function MediaPage() {
               {Array.from({ length: 6 }).map((_, index) => (
                 <div
                   key={`skeleton-${index}`}
-                  className="h-64 rounded-2xl bg-gradient-to-br from-gray-800/70 via-gray-900 to-black animate-pulse"
+                  className="h-40 rounded-2xl bg-gradient-to-br from-gray-800/70 via-gray-900 to-black animate-pulse"
                 />
               ))}
             </div>
@@ -182,24 +181,24 @@ export default function MediaPage() {
                     if (event.key === 'Enter' || event.key === ' ') copyToClipboard(file.url);
                   }}
                 >
-                  <div className="relative aspect-video w-full bg-gray-900">
+                  <div className="relative flex h-40 w-full items-center justify-center bg-gray-900">
                     {file.type === 'image' ? (
                       <img
                         src={decodeURIComponent(file.url)}
                         alt={file.name}
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        className="h-[100px] w-[100px] object-contain transition duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
                     ) : file.type === 'video' ? (
                       <video
                         src={decodeURIComponent(file.url)}
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        className="h-[100px] w-[100px] object-contain transition duration-500 group-hover:scale-105"
                         controls={false}
                         muted
                         preload="metadata"
                       />
                     ) : (
-                      <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-gray-400">
+                      <div className="flex h-[100px] w-[100px] flex-col items-center justify-center gap-3 text-gray-400">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                         </svg>
