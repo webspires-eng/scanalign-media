@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Media Gallery
+
+To add files to the media gallery, place them in the `public/Media` directory.
+
+### How it Works
+
+-   The application automatically scans the `public/Media` directory and displays all the files on the `/media` page.
+-   The URLs for the media files are generated automatically. For a file named `example.png` in the `public/Media` directory, the URL will be `/Media/example.png`.
+-   Clicking on a media item in the gallery will copy its public URL to your clipboard.
